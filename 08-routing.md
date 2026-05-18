@@ -1,6 +1,6 @@
 # 8. Routing en React
 
-[← Índice](README.md) | [← Anterior: 7. Comunicación](07-comunicacion-componentes.md) | [Siguiente: 9. APIs →](09-consumo-apis.md)
+[← Índice](README.md) | [← Anterior: 7. Comunicación](07-comunicacion-componentes.md) | [Lab 8.1 →](08-01-lab-react-router.md) | [Siguiente: 9. APIs →](09-consumo-apis.md)
 
 ---
 

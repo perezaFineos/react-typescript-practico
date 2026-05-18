@@ -1,6 +1,6 @@
 # 3. JSX y renderizado
 
-[← Índice](README.md) | [← Anterior: 2. Entorno](02-entorno-desarrollo.md) | [Siguiente: 4. Componentes →](04-componentes.md)
+[← Índice](README.md) | [← Anterior: 2. Entorno](02-entorno-desarrollo.md) | [Lab 3.1 →](03-01-lab-lista-noticias.md) | [Siguiente: 4. Componentes →](04-componentes.md)
 
 ---
 

@@ -1,6 +1,6 @@
 # 9. Consumo de APIs
 
-[← Índice](README.md) | [← Anterior: 8. Routing](08-routing.md) | [Siguiente: 10. Organización →](10-organizacion-buenas-practicas.md)
+[← Índice](README.md) | [← Anterior: 8. Routing](08-routing.md) | [Lab 9.1 →](09-01-lab-consumo-api.md) | [Siguiente: 10. Organización →](10-organizacion-buenas-practicas.md)
 
 ---
 

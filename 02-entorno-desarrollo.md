@@ -1,6 +1,6 @@
 # 2. Entorno de desarrollo
 
-[← Índice](README.md) | [← Anterior: 1. Introducción](01-introduccion-react-ecosistema.md) | [Siguiente: 3. JSX →](03-jsx-renderizado.md)
+[← Índice](README.md) | [← Anterior: 1. Introducción](01-introduccion-react-ecosistema.md) | [Lab 2.1 →](02-01-lab-vite.md) | [Siguiente: 3. JSX →](03-jsx-renderizado.md)
 
 ---
 

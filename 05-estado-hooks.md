@@ -1,6 +1,6 @@
 # 5. Estado y hooks
 
-[← Índice](README.md) | [← Anterior: 4. Componentes](04-componentes.md) | [Siguiente: 6. Eventos →](06-eventos-formularios.md)
+[← Índice](README.md) | [← Anterior: 4. Componentes](04-componentes.md) | [Lab 5.1 →](05-01-lab-useState.md) | [Siguiente: 6. Eventos →](06-eventos-formularios.md)
 
 ---
 

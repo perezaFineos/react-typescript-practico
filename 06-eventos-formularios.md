@@ -1,6 +1,6 @@
 # 6. Eventos y formularios
 
-[← Índice](README.md) | [← Anterior: 5. Estado](05-estado-hooks.md) | [Siguiente: 7. Comunicación →](07-comunicacion-componentes.md)
+[← Índice](README.md) | [← Anterior: 5. Estado](05-estado-hooks.md) | [Lab 6.1 →](06-01-lab-formulario-contacto.md) | [Siguiente: 7. Comunicación →](07-comunicacion-componentes.md)
 
 ---
 

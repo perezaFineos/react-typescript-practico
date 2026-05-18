@@ -79,4 +79,4 @@ Con los diez bloques puedes:
 4. Coordinar **padre e hijo** con flujo unidireccional.
 5. Añadir **rutas** y consumir **APIs REST** con estados de carga y error.
 
-Sigue practicando en tu fork: amplía `mi-app` con un mini-proyecto propio (catálogo, agenda, panel simple) aplicando la misma estructura de carpetas.
+Sigue practicando en tu fork: amplía tu proyecto Vite con un mini-proyecto propio (catálogo, agenda, panel simple) aplicando la misma estructura de carpetas.

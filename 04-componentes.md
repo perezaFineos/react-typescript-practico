@@ -1,6 +1,6 @@
 # 4. Componentes en React
 
-[← Índice](README.md) | [← Anterior: 3. JSX](03-jsx-renderizado.md) | [Siguiente: 5. Estado →](05-estado-hooks.md)
+[← Índice](README.md) | [← Anterior: 3. JSX](03-jsx-renderizado.md) | [Lab 4.1 →](04-01-lab-composicion.md) | [Siguiente: 5. Estado →](05-estado-hooks.md)
 
 ---
 

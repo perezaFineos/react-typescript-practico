@@ -8,16 +8,7 @@
 
 1. Haz **fork** de este repositorio en tu cuenta de GitHub.
 2. Abre un **Codespace**: en el repo, *Code* → *Codespaces* → *Create codespace on main*.
-3. Crea el proyecto de práctica (lo usarás en todos los labs):
-
-```bash
-npm create vite@latest mi-app -- --template react-ts
-cd mi-app
-npm install
-npm run dev
-```
-
-Abre la URL que muestra la terminal (por defecto `http://localhost:5173`). Cada capítulo añade código en esa misma carpeta `mi-app`.
+3. **Proyecto de práctica:** lo crearás en el **[Lab 2.1 — Vite](02-01-lab-vite.md)** (guion paso a paso). El nombre de la carpeta lo eliges tú; los labs siguientes usan el mismo proyecto (rutas `src/...` relativas a su raíz).
 
 ## Extensiones y configuración
 
@@ -62,4 +53,4 @@ No es necesario conocer React de antemano. TypeScript se introduce de forma prog
 - Servidor de desarrollo: **`npm run dev`** (Vite), no `npm start` (Create React App).
 - Commits opcionales en tu fork al terminar cada lab, con mensajes descriptivos (`feat: contador useState`, etc.).
 
-Cuando el entorno esté listo, continúa con [1. Introducción a React](01-introduccion-react-ecosistema.md).
+Cuando el Codespace esté listo, lee [1. Introducción a React](01-introduccion-react-ecosistema.md) y después el [Lab 2.1](02-01-lab-vite.md).

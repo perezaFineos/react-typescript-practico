@@ -1,6 +1,6 @@
 # 7. Comunicación entre componentes
 
-[← Índice](README.md) | [← Anterior: 6. Eventos](06-eventos-formularios.md) | [Siguiente: 8. Routing →](08-routing.md)
+[← Índice](README.md) | [← Anterior: 6. Eventos](06-eventos-formularios.md) | [Lab 7.1 →](07-01-lab-flujo-datos.md) | [Siguiente: 8. Routing →](08-routing.md)
 
 ---
 
