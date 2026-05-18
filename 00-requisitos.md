@@ -6,7 +6,7 @@
 
 ## Entorno recomendado: GitHub Codespaces
 
-1. **Fork** de [react-typescript-practico](https://github.com/davidpestana/react-typescript-practico).
+1. **Fork** de este repositorio.
 2. **Codespace**: *Code* → *Codespaces* → *Create codespace on main*.
 3. **Proyecto de práctica**: en el Codespace, crea una carpeta para labs:
 

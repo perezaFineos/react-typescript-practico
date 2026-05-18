@@ -38,4 +38,4 @@ src/
 
 - Testing con Vitest y Testing Library.
 - Estado global si la app crece (Context, Zustand, Redux).
-- Manual completo: [react-typescript](https://github.com/davidpestana/react-typescript).
+- Profundizar en patrones de composición y accesibilidad en formularios.

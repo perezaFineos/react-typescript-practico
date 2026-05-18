@@ -28,7 +28,3 @@ Capacitar para desarrollar aplicaciones SPA básicas con React: componentes, est
 | 8 | [Routing](08-routing.md) | Navegación entre páginas |
 | 9 | [Consumo de APIs](09-consumo-apis.md) | Fetch y estados loading/error |
 | 10 | [Organización y buenas prácticas](10-organizacion-buenas-practicas.md) | — |
-
-## Manual ampliado
-
-Versión extendida del mismo autor: [react-typescript](https://github.com/davidpestana/react-typescript) (105 capítulos, Redux, ciclo de vida clásico, etc.).
