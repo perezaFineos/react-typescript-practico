@@ -1,6 +1,6 @@
 # 8.1. Lab — React Router (rutas y enlaces)
 
-[← Capítulo 8](08-routing.md) | [← Lab 7.1](07-01-lab-flujo-datos.md) | [Índice](README.md) | [Siguiente lab →](09-01-lab-consumo-api.md)
+[← Capítulo 8](08-routing.md) | [← Lab 7.3](07-03-lab-useReducer.md) | [Índice](README.md) | [Siguiente lab →](09-01-lab-consumo-api.md)
 
 ---
 

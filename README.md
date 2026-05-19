@@ -26,7 +26,7 @@ Los laboratorios están en **archivos MD dedicados**: objetivo por paso, comprob
 | 4 | [Componentes](04-componentes.md) | [4.1 Lab composición](04-01-lab-composicion.md) |
 | 5 | [Estado y hooks](05-estado-hooks.md) | [5.1 Lab useState](05-01-lab-useState.md) · [5.2 Lab useEffect](05-02-lab-useEffect-reloj.md) |
 | 6 | [Eventos y formularios](06-eventos-formularios.md) | [6.1 Lab formulario](06-01-lab-formulario-contacto.md) |
-| 7 | [Comunicación](07-comunicacion-componentes.md) | [7.1 Lab flujo de datos](07-01-lab-flujo-datos.md) |
+| 7 | [Comunicación avanzada](07-comunicacion-componentes.md) | [7.1 Context](07-01-lab-useContext.md) · [7.2 HOC](07-02-lab-hoc-withData.md) · [7.3 useReducer](07-03-lab-useReducer.md) |
 | 8 | [Routing](08-routing.md) | [8.1 Lab React Router](08-01-lab-react-router.md) |
 | 9 | [Consumo de APIs](09-consumo-apis.md) | [9.1 Lab API](09-01-lab-consumo-api.md) |
 | 10 | [Organización y buenas prácticas](10-organizacion-buenas-practicas.md) | — |
