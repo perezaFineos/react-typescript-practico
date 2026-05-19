@@ -1,6 +1,6 @@
-# 7.3. Lab — `useReducer` (contador con acciones)
+# 7.5. Lab — `useReducer` (contador con acciones)
 
-[← Capítulo 7](07-comunicacion-componentes.md) | [← Lab 7.2](07-02-lab-hoc-withData.md) | [Índice](README.md) | [Siguiente: Cap. 8 →](08-routing.md) | [Lab 8.1 →](08-01-lab-react-router.md)
+[← Capítulo 7](07-comunicacion-componentes.md) | [← Lab 7.4](07-04-lab-hoc-withData.md) | [Índice](README.md) | [Siguiente lab →](07-06-lab-useReducer-caja.md)
 
 ---
 
@@ -186,4 +186,4 @@ return { valor: Math.max(0, estado.valor - 1) }
 - Acciones tipadas con `type` y `payload` opcional.
 - Centralizar reglas de actualización fuera del JSX.
 
-**Siguiente:** [Capítulo 8 Routing](08-routing.md) → [8.1 Lab React Router](08-01-lab-react-router.md).
+**Siguiente:** [7.6 Lab caja con teclado](07-06-lab-useReducer-caja.md).

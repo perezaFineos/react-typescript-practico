@@ -1,6 +1,6 @@
-# 7.2. Lab — HOC `withData` (fetch reutilizable)
+# 7.4. Lab — HOC `withData` (fetch reutilizable)
 
-[← Capítulo 7](07-comunicacion-componentes.md) | [← Lab 7.1](07-01-lab-useContext.md) | [Índice](README.md) | [Siguiente lab →](07-03-lab-useReducer.md)
+[← Capítulo 7](07-comunicacion-componentes.md) | [← Lab 7.3](07-03-lab-hoc-withHover.md) | [Índice](README.md) | [Siguiente lab →](07-05-lab-useReducer-contador.md)
 
 ---
 
@@ -278,4 +278,4 @@ export function withData<P extends object>(
 - Reutilizar fetch + loading en un solo sitio.
 - Inyectar datos como props al componente presentacional.
 
-**Siguiente:** [7.3 Lab useReducer](07-03-lab-useReducer.md).
+**Siguiente:** [7.5 Lab useReducer contador](07-05-lab-useReducer-contador.md).

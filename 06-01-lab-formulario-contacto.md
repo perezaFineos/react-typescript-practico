@@ -294,4 +294,4 @@ Muestra el bloque con `resumen` en lugar de los campos vacíos:
 - Validación en el cliente y `disabled` en botones.
 - `onSubmit` y `preventDefault`.
 
-**Siguiente:** [Capítulo 7](07-comunicacion-componentes.md) → [7.1 Lab useContext](07-01-lab-useContext.md).
+**Siguiente:** [Capítulo 7](07-comunicacion-componentes.md) → [7.0 Lab prop drilling](07-00-lab-prop-drilling.md).

@@ -1,6 +1,6 @@
 # 7.1. Lab — `useContext` (idioma sin prop drilling)
 
-[← Capítulo 7](07-comunicacion-componentes.md) | [← Lab 6.1](06-01-lab-formulario-contacto.md) | [Índice](README.md) | [Siguiente lab →](07-02-lab-hoc-withData.md)
+[← Capítulo 7](07-comunicacion-componentes.md) | [← Lab 7.0](07-00-lab-prop-drilling.md) | [Índice](README.md) | [Siguiente lab →](07-02-lab-context-tema.md)
 
 ---
 
@@ -17,6 +17,7 @@ Crear un **contexto de idioma** (`es` / `en`), un selector en un componente inte
 | Archivo | Acción |
 |---------|--------|
 | `src/context/LangContext.tsx` | Crear (contexto + Provider) |
+| `src/components/SelectLang.tsx` | Crear |
 | `src/components/Header.tsx` | Crear |
 | `src/App.tsx` | Modificar |
 
@@ -223,4 +224,4 @@ export default App
 - Evitar prop drilling para datos globales de UI.
 - Comprobar `null` cuando el contexto no tiene valor por defecto tipado.
 
-**Siguiente:** [7.2 Lab HOC — withData](07-02-lab-hoc-withData.md).
+**Siguiente:** [7.2 Lab tema claro/oscuro](07-02-lab-context-tema.md).

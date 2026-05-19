@@ -1,138 +1,82 @@
 # 7. Comunicación entre componentes (avanzado)
 
-[← Índice](README.md) | [← Anterior: 6. Eventos](06-eventos-formularios.md) | [Lab 7.1 →](07-01-lab-useContext.md) | [Siguiente: 8. Routing →](08-routing.md)
+[← Índice](README.md) | [← Anterior: 6. Eventos](06-eventos-formularios.md) | [Lab 7.0 →](07-00-lab-prop-drilling.md) | [Siguiente: 8. Routing →](08-routing.md)
 
 ---
 
-En capítulos anteriores ya viste **props**, **callbacks** y **elevación de estado** (cap. 4–6) con `useState`. Aquí el problema es otro: cuando el árbol crece, pasar las mismas props por muchos niveles intermedios (**prop drilling**) vuelve el código frágil y repetitivo.
-
-Este bloque presenta tres herramientas para compartir lógica y estado sin cablear cada nivel:
+En capítulos anteriores ya trabajaste **props**, **callbacks** y **`useState`** / **`useEffect`** (cap. 4–6 y 5). Este bloque ataca el **prop drilling** y la lógica compartida en árboles grandes.
 
 | Herramienta | Para qué sirve |
 |-------------|----------------|
-| **Context + `useContext`** | Valor accesible en profundidad sin pasarlo manualmente por cada hijo |
-| **HOC** (Higher Order Component) | Función que envuelve un componente y le añade comportamiento reutilizable |
-| **`useReducer`** | Estado con **acciones** y un `reducer`; útil cuando varios cambios siguen reglas |
+| **Props + callbacks** | Comunicación directa padre ↔ hijo (repaso en 7.0) |
+| **Context + `useContext`** | Valores globales de UI (idioma, tema) sin reenviar props |
+| **HOC** (`with…`) | Envolver componentes y añadir comportamiento reutilizable |
+| **`useReducer`** | Estado con acciones y reglas en un `reducer` |
+| **Hooks personalizados** | Encapsular Context o fetch (`useLang`, `useTheme`) |
 
 ---
 
 ## Prop drilling
 
-Ejemplo simplificado:
-
 ```
-App (tema)
- └── Layout (recibe tema, no lo usa)
-      └── Sidebar (recibe tema, no lo usa)
-           └── BotonTema (finalmente usa tema)
+App (estado)
+ └── Layout (solo reenvía props)
+      └── Panel (usa props)
 ```
 
-`Layout` y `Sidebar` solo **reenvían** props. Con Context, `App` publica el tema y `BotonTema` lo lee directamente.
+El lab **7.0** lo reproduce a propósito. Los labs **7.1** y **7.2** lo sustituyen por **Context**.
 
 ---
 
 ## Context API y `useContext`
 
-1. **`createContext`** — crea el “canal” de datos.
-2. **`<MiContext.Provider value={...}>`** — envuelve la rama que debe recibir el valor.
-3. **`useContext(MiContext)`** — cualquier hijo (a cualquier profundidad) lee el valor actual.
+1. `createContext`
+2. `<Provider value={…}>`
+3. `useContext` o un hook propio (`useLang`, `useTheme`)
 
-```tsx
-import { createContext, useContext, useState, type ReactNode } from 'react'
-
-type Tema = 'claro' | 'oscuro'
-
-const TemaContext = createContext<Tema>('claro')
-
-function BotonTema() {
-  const tema = useContext(TemaContext)
-  return <span>Tema actual: {tema}</span>
-}
-
-function App() {
-  const [tema, setTema] = useState<Tema>('claro')
-  return (
-    <TemaContext.Provider value={tema}>
-      <BotonTema />
-    </TemaContext.Provider>
-  )
-}
-```
-
-**Cuándo usarlo:** tema, idioma, usuario logueado, preferencias globales de UI. No sustituye a todo el estado local: un input de formulario sigue en `useState` del componente que lo muestra.
+**Cuándo usarlo:** tema, idioma, usuario de sesión. **Cuándo no:** estado de un solo input o de un formulario local.
 
 ---
 
 ## Higher Order Components (HOC)
 
-Un **HOC** es una **función** que recibe un componente y devuelve **otro** componente con capacidades extra (patrón “envolver”).
+Función `withAlgo(Componente)` → componente envuelto. Convención: nombre con prefijo **`with`**.
 
-Convención: nombre que empieza por **`with`** (`withData`, `withLoading`).
+- **7.3** — `withHover` (UI transversal)
+- **7.4** — `withData` (fetch + loading + inyectar `data`)
 
-```tsx
-import type { ComponentType } from 'react'
-
-function withSaludo<P extends object>(Wrapped: ComponentType<P>) {
-  return function ComponenteConSaludo(props: P) {
-    return (
-      <>
-        <p>Hola desde el HOC</p>
-        <Wrapped {...props} />
-      </>
-    )
-  }
-}
-```
-
-**Cuándo usarlo:** lógica transversal repetida (cargar datos, spinner, permisos). Hoy también se resuelve con **hooks personalizados**; los HOC siguen apareciendo en código legacy y librerías.
+En código nuevo suele preferirse **custom hooks** (lab **7.7**), pero los HOC siguen en librerías y proyectos legacy.
 
 ---
 
 ## `useReducer`
 
-Similar a Redux en miniatura: un **`reducer(state, action)`** centraliza **cómo** cambia el estado.
+`const [state, dispatch] = useReducer(reducer, initialState)`
 
-```tsx
-type Estado = { cuenta: number }
-type Accion =
-  | { type: 'incrementar' }
-  | { type: 'decrementar' }
-  | { type: 'reiniciar' }
+- **7.5** — contador con acciones tipadas
+- **7.6** — posición de una caja con teclado + `useEffect` para listeners
 
-function reducer(estado: Estado, accion: Accion): Estado {
-  switch (accion.type) {
-    case 'incrementar':
-      return { cuenta: estado.cuenta + 1 }
-    case 'decrementar':
-      return { cuenta: estado.cuenta - 1 }
-    case 'reiniciar':
-      return { cuenta: 0 }
-    default:
-      return estado
-  }
-}
-
-const [estado, dispatch] = useReducer(reducer, { cuenta: 0 })
-
-// dispatch({ type: 'incrementar' })
-```
-
-| `useState` | `useReducer` |
-|------------|--------------|
-| Cambios simples y locales | Varias acciones relacionadas |
-| Poco boilerplate | Reglas de actualización en un solo sitio |
-| Un valor o pocos campos | Objeto de estado con transiciones claras |
+Útil cuando muchas transiciones comparten reglas en un solo `switch`.
 
 ---
 
-## Laboratorios
+## Hooks personalizados
 
-Ejecuta los tres en orden en tu proyecto Vite (mismo del [lab 2.1](02-01-lab-vite.md)):
+Funciones `useX()` que pueden llamar a otros hooks. El lab **7.7** define `useLang()` sobre el contexto del **7.1**.
+
+---
+
+## Laboratorios (orden recomendado)
 
 | Lab | Tema |
 |-----|------|
-| [7.1 useContext](07-01-lab-useContext.md) | Idioma de la app sin prop drilling |
-| [7.2 HOC](07-02-lab-hoc-withData.md) | `withData` + fetch reutilizable |
-| [7.3 useReducer](07-03-lab-useReducer.md) | Contador con acciones tipadas |
+| [7.0 Prop drilling](07-00-lab-prop-drilling.md) | El problema (callbacks por niveles) |
+| [7.1 useContext — idioma](07-01-lab-useContext.md) | `LangProvider` + `Header` anidado |
+| [7.2 Context — tema](07-02-lab-context-tema.md) | Claro / oscuro + `useTheme` |
+| [7.3 HOC — withHover](07-03-lab-hoc-withHover.md) | Estilos hover + `{...props}` |
+| [7.4 HOC — withData](07-04-lab-hoc-withData.md) | Fetch reutilizable |
+| [7.5 useReducer — contador](07-05-lab-useReducer-contador.md) | Acciones tipadas |
+| [7.6 useReducer — caja](07-06-lab-useReducer-caja.md) | Teclado + reducer + cleanup |
+| [7.7 Hook — useLang](07-07-lab-hook-useLang.md) | Custom hook sobre Context |
 
-Cada lab es un archivo dedicado con objetivo por paso, comprobaciones y retos.
+Cada lab es un MD dedicado: objetivo por paso, comprobaciones, retos y «si algo falla».
